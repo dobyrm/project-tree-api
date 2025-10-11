@@ -1,0 +1,37 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: project-tree-api
+    ports:
+      - "${APP_PORT}:3000"
+    volumes:
+      - .:/app
+    environment:
+      NODE_ENV: development
+    networks:
+      - project-tree
+    stdin_open: true
+    tty: true
+
+  postgres:
+    image: postgres
+    container_name: project-tree-postgres
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    networks:
+      - project-tree
+
+volumes:
+  pgdata:
+
+networks:
+  project-tree:
+    driver: bridge
