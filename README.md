@@ -25,9 +25,37 @@ docker-compose up -d
 ### 3. Access bash inside the container
 
 ```bash
-docker exec -it project-tree-api bash
+docker exec -it project-tree-api sh
 ```
 (If already running via `docker-compose up`)
+
+## Project setup
+
+```bash
+$ npm install
+```
+
+## Compile and run the project
+
+```bash
+$ npm run start
+
+$ npm run start:dev
+
+$ npm run start:prod
+```
+
+## Run tests
+
+```bash
+$ npm run test
+
+$ npm run test:e2e
+
+$ npm run test:cov
+```
+
+
 
 ## Project Structure
 
