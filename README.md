@@ -45,6 +45,12 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Run lint
+
+```bash
+$ npm run lint
+```
+
 ## Run tests
 
 ```bash
